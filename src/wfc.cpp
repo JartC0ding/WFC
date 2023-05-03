@@ -3,8 +3,8 @@
 using namespace std;
 
 WFC::WFC(int seed, vector<int> &_grid) {
-    this->grid = _grid; // will be procedurally generated
-    this->grid[0] = seed;
+    this->size = _grid.size();
+    this->grid = vector<int>{seed}; // will be procedurally generated
 }
 
 int WFC::eval_next(int curr) {
@@ -20,8 +20,8 @@ int WFC::eval_next(int curr) {
 }
 
 vector<int> WFC::collapse() {
-    for (int i = 1; i < this->grid.size(); i++) {
-        this->grid[i] = (this->eval_next(i));
+    for (int i = 1; i < this->size; i++) {
+        this->grid.push_back(this->eval_next(i));
     }
 
     return this->grid;

@@ -9,6 +9,7 @@ typedef bool(*is_possible)(vector<int>&,int);
 class WFC {
     private:
         int eval_next(int curr);
+        int size;
         vector<int> grid;
 
     public:

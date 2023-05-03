@@ -15,9 +15,8 @@ bool c2(vector<int> &_res, int c_pos) {
 
 int main(void) {
     vector<int> res(5); // result vector
-    cout << to_string(res.size()) << endl;
 
-    WFC my_wfc(0, res);
+    WFC my_wfc(1, res);
     my_wfc.options.push_back(&c1); // add quantum 1
     my_wfc.options.push_back(&c2); // add quantum 2
     res = my_wfc.collapse();
